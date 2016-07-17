@@ -1,8 +1,7 @@
-import logging
+import logging as log
 from constants import REMINDER
 from slackclient import SlackClient
 
-log = logging.getLogger(__name__)
 
 class MySlack(object):
     def __init__(self, token):

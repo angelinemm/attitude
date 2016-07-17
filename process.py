@@ -1,13 +1,12 @@
 import ConfigParser
-import logging
+import logging as log
 from attitude import AttitudeBot
 
-logging.basicConfig()
-log = logging.getLogger(__name__)
 
-log.info('Reading config file...')
 config = ConfigParser.ConfigParser()
 config.read('./config/attitude.cfg')
+
+log.getLogger().setLevel(config.get('main', 'log_level'))
 
 log.info('Launching bot...')
 bot = AttitudeBot(config)
